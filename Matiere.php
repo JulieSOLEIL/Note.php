@@ -20,7 +20,7 @@ class Matiere {
             $note->affiche();
         }
 
-        echo '\nla note moyenne est' .$this->moyenne();
+        echo "\nLa note moyenne est " .$this->moyenne();
     }
     
     public function moyenne() {

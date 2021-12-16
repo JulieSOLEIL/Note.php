@@ -8,7 +8,7 @@ class Note {
     private $noteMax;
 
     // constructeur
-    public function __construct($note, $noteMin = 0.0, $noteMax = 20.0) {
+    public function __construct(float $note = 0.0, $noteMin = 0.0, $noteMax = 20.0) {
         // $this->note = $note;
         $this->noteMin = $noteMin;
         $this->noteMax = $noteMax;
@@ -31,7 +31,7 @@ class Note {
         if ($note >= $this->noteMin && $note <= $this->noteMax) {
             $this->note = $note;
         } else {
-            echo 'La note doit être comprise entre '.$this->noteMin. ' et '.$this->noteMax;
+            throw new Exception('La note doit être comprise entre '.$this->noteMin. ' et '.$this->noteMax."\n");
         }
        
     }
@@ -44,6 +44,6 @@ class Note {
 
     // autres méthodes
     public function affiche() {
-        echo ' La note est de '.$this->note.' (comprise entre '.$this->noteMin.' et '.$this->noteMax.')\n';
+        echo ' La note est de '.$this->note.' (comprise entre '.$this->noteMin.' et '.$this->noteMax." )\n";
     }
 }
